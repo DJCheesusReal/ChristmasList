@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -117,71 +118,71 @@
   <ul id="birthday-list"></ul>
   <script>
     const birthdayList = [
-      {
-        name: "Oculus Charging Dock",
-        url: "https://www.amazon.co.uk/Dazed-Oculus-Quest-Charge-Dock/dp/B095X1WH25/ref=sr_1_6?crid=3AQ1FFMHPUS0K&=meta%2Bquest%2Bgift%2Bcard&qid=1683658347&sprefix",
-        price: "£69",
-        image: "https://i.imgur.com/l6lys6t.jpg"
-      },
-      {
-        name: "Keyboard Keycaps",
-        url: "https://www.amazon.co.uk/dp/B0948VPY82/?coliid=I1IBVDFEXLI18O&colid=1X30Z5RDR53L4&psc=1&ref_=cm_sw_r_apin_lsptd_QZ5PX8TEAYGGR2731YB1",
-        price: "£25.99",
-        image: "https://i.imgur.com/1ZXq0me.jpg"
-      },
-      {
-        name: "Robux Gift Card",
-        url: "https://roblox.cashstar.com/store/recipient?locale=en-gb",
-        price: "Any price",
-        image: "https://i.imgur.com/niAt0cf.jpg"
-      },
-      {
-        name: "Microphone With Stand",
-        url: "https://www.amazon.co.uk/dp/B07WFW673W/?coliid=I367187JN36KTX&colid=1X30Z5RDR53L4&psc=1&ref_=cm_sw_r_apin_lsptd_QZ5PX8TEAYGR2731YB1",
-        price: "£42.99",
-        image: "https://i.imgur.com/ItZghJR.jpg"
-      },
-      {
-        name: "Stream Deck",
-        url: "https://www.elgato.com/en/stream-deck-mk2",
-        price: "£121.05",
-        image: "https://i.imgur.com/G0TxWq1.png"
-      },
-      {
-        name: "Switches x3",
-        url: "https://www.kiiboom.com/products/kiiboom-matcha-latte-switches",
-        price: "£38.50",
-        image: "https://i.imgur.com/URHEkvd.png#"
-      },
-      {
-        name: "Money",
-        url: "https://example.com/money",
-        price: "undefined",
-        image: "https://i.imgur.com/vFfWi0m.png"
-      }
-    ];
+  {
+    name: "Oculus Charging Dock",
+    url: "https://www.amazon.co.uk/Dazed-Oculus-Quest-Charge-Dock/dp/B095X1WH25/ref=sr_1_6?crid=3AQ1FFMHPUS0K&=meta%2Bquest%2Bgift%2Bcard&qid=1683658347&sprefix",
+    price: "£69",
+    image: "https://i.imgur.com/l6lys6t.jpg"
+  },
+  {
+    name: "Keyboard Keycaps",
+    url: "https://www.amazon.co.uk/dp/B0948VPY82/?coliid=I1IBVDFEXLI18O&colid=1X30Z5RDR53L4&psc=1&ref_=cm_sw_r_apin_lsptd_QZ5PX8TEAYGGR2731YB1",
+    price: "£25.99",
+    image: "https://i.imgur.com/1ZXq0me.jpg"
+  },
+  {
+    name: "Robux Gift Card",
+    url: "https://roblox.cashstar.com/store/recipient?locale=en-gb",
+    price: "Any price",
+    image: "https://i.imgur.com/niAt0cf.jpg"
+  },
+  {
+    name: "Microphone With Stand",
+    url: "https://www.amazon.co.uk/dp/B07WFW673W/?coliid=I367187JN36KTX&colid=1X30Z5RDR53L4&psc=1&ref_=cm_sw_r_apin_lsptd_QZ5PX8TEAYGR2731YB1",
+    price: "£42.99",
+    image: "https://i.imgur.com/ItZghJR.jpg"
+  },
+  {
+    name: "Stream Deck",
+    url: "https://www.elgato.com/en/stream-deck-mk2",
+    price: "£121.05",
+    image: "https://i.imgur.com/G0TxWq1.png"
+  },
+  {
+    name: "Switches x3",
+    url: "https://www.kiiboom.com/products/kiiboom-matcha-latte-switches",
+    price: "£38.50",
+    image: "https://i.imgur.com/URHEkvd.png#"
+  },
+  {
+    name: "Fortnite V-Bucks",
+    url: "undefined",
+    price: "undefined",
+    image: "https://i.imgur.com/CJsDaK2.jpg"
+  }
+];
 
-    const listElement = document.getElementById("birthday-list");
+const listElement = document.getElementById("birthday-list");
 
-    function createListItem(item) {
-      const listItem = document.createElement("li");
+function createListItem(item) {
+  const listItem = document.createElement("li");
 
-      const itemInfoElement = document.createElement("div");
-      itemInfoElement.classList.add("item-info");
-      itemInfoElement.innerHTML = `
-        <div class="item-image">
-          <img src="${item.image}" alt="${item.name}">
-        </div>
-        <p><strong>${item.name}</strong></p>
-        ${item.url ? `<p><a href="${item.url}" target="_blank">View Item</a></p>` : ''}
-        <p>Price: ${item.price}</p>
-      `;
+  const itemInfoElement = document.createElement("div");
+  itemInfoElement.classList.add("item-info");
+  itemInfoElement.innerHTML = `
+    <div class="item-image">
+      <img src="${item.image}" alt="${item.name}">
+    </div>
+    <p><strong>${item.name}</strong></p>
+    ${item.url ? `<p><a href="${item.url}" target="_blank">View Item</a></p>` : ''}
+    <p>Price: ${item.price}</p>
+  `;
 
-      listItem.appendChild(itemInfoElement);
-      listElement.appendChild(listItem);
-    }
+  listItem.appendChild(itemInfoElement);
+  listElement.appendChild(listItem);
+}
 
-    birthdayList.forEach(createListItem);
+birthdayList.forEach(createListItem);
   </script>
 </body>
 </html>
