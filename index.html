@@ -23,6 +23,29 @@
   transform: scale(1.1);
 }
 
+    /* Snow effect */
+
+.snowflake {
+  position: absolute;
+  top: -10vh;
+  left: random(100vw);
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  animation: snowfall 3s linear infinite;
+}
+
+@keyframes snowfall {
+  0% {
+    top: -10vh;
+  }
+  100% {
+    top: 110vh;
+  }
+}
+
+
     
     /* Header */
     header {
