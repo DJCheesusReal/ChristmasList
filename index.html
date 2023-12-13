@@ -14,50 +14,54 @@
       padding: 0;
     }
 
+    .square {
+      transition: transform 0.3s ease-out;
+    }
 
- .square {
-  transition: transform 0.3s ease-out;
-}
-
-.square:hover {
-  transform: scale(1.1);
-}
+    .square:hover {
+      transform: scale(1.1);
+    }
 
     /* Snow effect */
+    .snowflake {
+      position: absolute;
+      top: -10vh;
+      left: random(100vw);
+      width: 10px;
+      height: 10px;
+      background-color: white;
+      border-radius: 50%;
+      animation: snowfall 3s linear infinite;
+    }
 
-.snowflake {
-  position: absolute;
-  top: -10vh;
-  left: random(100vw);
-  width: 10px;
-  height: 10px;
-  background-color: white;
-  border-radius: 50%;
-  animation: snowfall 3s linear infinite;
-}
+    @keyframes snowfall {
+      0% {
+        top: -10vh;
+      }
+      100% {
+        top: 110vh;
+      }
+    }
 
-@keyframes snowfall {
-  0% {
-    top: -10vh;
-  }
-  100% {
-    top: 110vh;
-  }
-}
-
-
-    
     /* Header */
     header {
       background-color: #2a9d8f; /* Christmas Green header */
       padding: 20px 0;
       text-align: center;
+      position: relative;
     }
 
     h1 {
       font-size: 48px;
       margin: 0;
       padding: 10px;
+    }
+
+    /* Countdown timer styles */
+    #countdown {
+      font-size: 24px;
+      margin: 10px;
+      color: #ffffff; /* White text */
     }
 
     /* Container for squares */
@@ -121,6 +125,7 @@
 <body>
   <header>
     <h1>Merry Christmas!</h1>
+    <div id="countdown"></div>
   </header>
 
   <div class="square-container">
@@ -156,8 +161,6 @@
       <a href="https://www.amazon.co.uk/Minecraft-Java-Bedrock-Windows-10/dp/B0B1RSB7HT/ref=sr_1_1?crid=231POCHJBX3II&keywords=Minecraft%3A+Java+%26+Bedrock+Edition&qid=1694968227&sprefix=minecraft+java+%26+bedrock+edition%2Caps%2C392&sr=8-1" target="_blank">View Gift</a>
     </div>
 
-    <!-- Add more squares as needed -->
-
     <!-- Square 5 -->
     <div class="square">
       <img src="https://m.media-amazon.com/images/I/61oHkgKDUoL._AC_SL1500_.jpg" alt="Gift 5">
@@ -192,5 +195,29 @@
 
     <!-- Add more squares as needed -->
   </div>
+
+  <script>
+    // Christmas date (year, month (0-based), day, hour, minute, second)
+    const christmasDate = new Date(2023, 11, 25, 0, 0, 0);
+
+    function updateCountdown() {
+      const now = new Date();
+      const timeDifference = christmasDate - now;
+
+      const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+      const countdownElement = document.getElementById('countdown');
+      countdownElement.innerHTML = `Countdown: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    // Update countdown every second
+    setInterval(updateCountdown, 1000);
+
+    // Initial update
+    updateCountdown();
+  </script>
 </body>
 </html>
